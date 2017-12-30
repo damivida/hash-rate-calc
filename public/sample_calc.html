@@ -1,0 +1,74 @@
+
+<!doctype html>
+<html>
+<head>
+    <title>HashPower Converter</title>
+
+    <meta charset="utf-8" />
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    
+    <script>
+    
+    function calc() {
+        
+        var numInput = parseFloat(document.getElementById('numInput').value);
+         
+        var hashRateInput = document.getElementById('hashRateInput').value;
+        var hashRateOutput = document.getElementById('hashRateOutput').value;
+        
+        //calc H/s
+        if(hashRateInput === 'h/s' && hashRateOutput === 'kh/s') {
+            document.getElementById('result').value = numInput/1000;
+        }else if(hashRateInput === 'h/s' && hashRateOutput === 'mh/s') {
+            document.getElementById('result').value = numInput/1000000;
+        }else if(hashRateInput === 'h/s' && hashRateOutput === 'gh/s') {
+            document.getElementById('result').value = numInput/10000000000;
+        }else if(hashRateInput === 'h/s' && hashRateOutput === 'th/s') {
+            document.getElementById('result').value = numInput/10000000000000;
+        
+        //calc Kh/s
+        }else if(hashRateInput === 'kh/s' && hashRateOutput === 'h/s') {
+            document.getElementById('result').value = numInput*1000;
+        }else if(hashRateInput === 'kh/s' && hashRateOutput === 'mh/s') {
+            document.getElementById('result').value = numInput/1000;
+        }else if(hashRateInput === 'kh/s' && hashRateOutput === 'gh/s') {
+            document.getElementById('result').value = numInput/1000000;
+        }else if(hashRateInput === 'kh/s' && hashRateOutput === 'th/s') {
+            document.getElementById('result').value = numInput/1000000000;
+        }else {
+            alert("please make valid selection");
+        }
+ }
+    
+    </script>
+    
+</head>
+
+<body>
+<div>
+    <h2>HashPower Converter</h2>
+    <p>Select HashPower</p>
+    <select id="hashRateInput">
+        <option value="h/s">H/s</option>
+        <option value="kh/s">Kh/s</option>
+        <option value="mh/s">Mh/s</option>
+        <option value="gh/s">Gh/s</option>
+        <option value="th/s">Th/s</option>
+    </select>
+    
+   <input type="text" id="numInput"/><br/><br/>
+   <button onclick="calc();">Convert to: </button><br/><br/>
+   <select id="hashRateOutput">
+        <option value="h/s">H/s</option>
+        <option value="kh/s">Kh/s</option>
+        <option value="mh/s">Mh/s</option>
+        <option value="gh/s">Gh/s</option>
+        <option value="th/s">Th/s</option>
+    </select>
+    
+    <input type="text" id="result"><br/><br/>
+    
+</div>
+</body>
+</html>
