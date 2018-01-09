@@ -9,6 +9,7 @@ app.set('view engine', 'hbs');
 
 
 //-express middleware
+/*
 app.use((req, res, next)=> {
     var now = new Date().toString();
     var log = `${now}: ${req.method} ${req.url}`;
@@ -22,6 +23,7 @@ app.use((req, res, next)=> {
     });
     next();
 });
+*/
 
 
 //-GET REQUEST FOR MAINTENANCE PAGE
@@ -48,7 +50,7 @@ hbs.registerHelper('screamIt', (text) => {
 //-GET REQUEST FOR HOME PAGE
 app.get('/', (req,res) => {
     res.render('home.hbs', {
-        pageTitle: 'HashPower Coverter',
+        pageTitle: 'HashPower Converter',
         welcome: 'Convert HashPower and calculate daily mined coins',
     });
 });
@@ -56,7 +58,7 @@ app.get('/', (req,res) => {
 //-GET REQUEST FOR CALC PAGE 
 app.get('/calc', (req,res) => {
   res.render('calc.hbs', {
-  pageTitle: 'HashPower Coverter',
+  pageTitle: 'HashPower Converter',
   welcome: 'Here you can calculate hashpower', 
   });
 });
