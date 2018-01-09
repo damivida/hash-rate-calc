@@ -59,9 +59,16 @@ app.get('/', (req,res) => {
 //-GET REQUEST FOR CALC PAGE 
 app.get('/calc', (req,res) => {
   res.render('calc.hbs', {
-  pageTitle: 'HashPower Converter',
-  welcome: 'Here you can calculate hashpower', 
+  pageTitle: 'Sample calc',
+  welcome: 'Here you can calculate hashpower(limitation on H/s and Kh/s)', 
   });
+});
+
+app.get('/projects', (req,res) => {
+    res.render('projects.hbs', {
+        pageTitle:'Project Page',
+        welcome:'Some projects will be listed here'
+    });
 });
 
 
