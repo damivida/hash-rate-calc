@@ -1,195 +1,194 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <title>HashPower Converter</title>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js">   
- </script>
- 
- <script>
-    
-     //-- hashrate converter
-    function calc() {
-            
-        var numInput = parseFloat(document.getElementById('numInput').value.replace(",",""));
-         
-        var hashRateInput = document.getElementById('hashRateInput').value;
-        var hashRateOutput = document.getElementById('hashRateOutput').value;
-        
-           
-        //calc from H/s
-        if(hashRateInput === 'h/s' && hashRateOutput === 'kh/s') {
-            document.getElementById('result').value = numInput/1000;
-        }else if(hashRateInput === 'h/s' && hashRateOutput === 'mh/s') {
-            document.getElementById('result').value = numInput/1000000;
-        }else if(hashRateInput === 'h/s' && hashRateOutput === 'gh/s') {
-            document.getElementById('result').value = numInput/10000000000;
-        }else if(hashRateInput === 'h/s' && hashRateOutput === 'th/s') {
-            document.getElementById('result').value = numInput/10000000000000;
-        
-        //calc from Kh/s
-        }else if(hashRateInput === 'kh/s' && hashRateOutput === 'h/s') {
-            document.getElementById('result').value = numInput*1000;
-        }else if(hashRateInput === 'kh/s' && hashRateOutput === 'mh/s') {
-            document.getElementById('result').value = numInput/1000;
-        }else if(hashRateInput === 'kh/s' && hashRateOutput === 'gh/s') {
-            document.getElementById('result').value = numInput/1000000;
-        }else if(hashRateInput === 'kh/s' && hashRateOutput === 'th/s') {
-            document.getElementById('result').value = numInput/1000000000;
-     
-          //calc from Mh/s
-        }else if(hashRateInput === 'mh/s' && hashRateOutput === 'h/s') {
-            document.getElementById('result').value = numInput*1000000;
-        }else if(hashRateInput === 'mh/s' && hashRateOutput === 'kh/s') {
-            document.getElementById('result').value = numInput*1000;
-        }else if(hashRateInput === 'mh/s' && hashRateOutput === 'gh/s') {
-            document.getElementById('result').value = numInput/1000;
-        }else if(hashRateInput === 'mh/s' && hashRateOutput === 'th/s') {
-            document.getElementById('result').value = numInput/1000000; 
-           
-          //calc from Gh/s  
-        }else if(hashRateInput === 'gh/s' && hashRateOutput === 'h/s') {
-            document.getElementById('result').value = numInput*1000000000;
-        }else if(hashRateInput === 'gh/s' && hashRateOutput === 'kh/s') {
-            document.getElementById('result').value = numInput*1000000;
-        }else if(hashRateInput === 'gh/s' && hashRateOutput === 'mh/s') {
-            document.getElementById('result').value = numInput*1000;
-        }else if(hashRateInput === 'gh/s' && hashRateOutput === 'th/s') {
-            document.getElementById('result').value = numInput/1000;    
-            
-              //calc from Th/s  
-        }else if(hashRateInput === 'th/s' && hashRateOutput === 'h/s') {
-            document.getElementById('result').value = numInput*1000000000000;
-        }else if(hashRateInput === 'th/s' && hashRateOutput === 'kh/s') {
-            document.getElementById('result').value = numInput*1000000000;
-        }else if(hashRateInput === 'th/s' && hashRateOutput === 'mh/s') {
-            document.getElementById('result').value = numInput*1000000;
-        }else if(hashRateInput === 'th/s' && hashRateOutput === 'gh/s') {
-            document.getElementById('result').value = numInput*1000;
-        }else {
-            alert("Please slect valid hashrate ");
+    <title>HashPower Converter</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js">
+
+
+    </script>
+
+    <script>
+        //-- hashrate converter
+        function calc() {
+
+            var numInput = parseFloat(document.getElementById('numInput').value.replace(",", ""));
+
+            var hashRateInput = document.getElementById('hashRateInput').value;
+            var hashRateOutput = document.getElementById('hashRateOutput').value;
+
+
+            //calc from H/s
+            if (hashRateInput === 'h/s' && hashRateOutput === 'kh/s') {
+                document.getElementById('result').value = numInput / 1000;
+            } else if (hashRateInput === 'h/s' && hashRateOutput === 'mh/s') {
+                document.getElementById('result').value = numInput / 1000000;
+            } else if (hashRateInput === 'h/s' && hashRateOutput === 'gh/s') {
+                document.getElementById('result').value = numInput / 10000000000;
+            } else if (hashRateInput === 'h/s' && hashRateOutput === 'th/s') {
+                document.getElementById('result').value = numInput / 10000000000000;
+
+                //calc from Kh/s
+            } else if (hashRateInput === 'kh/s' && hashRateOutput === 'h/s') {
+                document.getElementById('result').value = numInput * 1000;
+            } else if (hashRateInput === 'kh/s' && hashRateOutput === 'mh/s') {
+                document.getElementById('result').value = numInput / 1000;
+            } else if (hashRateInput === 'kh/s' && hashRateOutput === 'gh/s') {
+                document.getElementById('result').value = numInput / 1000000;
+            } else if (hashRateInput === 'kh/s' && hashRateOutput === 'th/s') {
+                document.getElementById('result').value = numInput / 1000000000;
+
+                //calc from Mh/s
+            } else if (hashRateInput === 'mh/s' && hashRateOutput === 'h/s') {
+                document.getElementById('result').value = numInput * 1000000;
+            } else if (hashRateInput === 'mh/s' && hashRateOutput === 'kh/s') {
+                document.getElementById('result').value = numInput * 1000;
+            } else if (hashRateInput === 'mh/s' && hashRateOutput === 'gh/s') {
+                document.getElementById('result').value = numInput / 1000;
+            } else if (hashRateInput === 'mh/s' && hashRateOutput === 'th/s') {
+                document.getElementById('result').value = numInput / 1000000;
+
+                //calc from Gh/s  
+            } else if (hashRateInput === 'gh/s' && hashRateOutput === 'h/s') {
+                document.getElementById('result').value = numInput * 1000000000;
+            } else if (hashRateInput === 'gh/s' && hashRateOutput === 'kh/s') {
+                document.getElementById('result').value = numInput * 1000000;
+            } else if (hashRateInput === 'gh/s' && hashRateOutput === 'mh/s') {
+                document.getElementById('result').value = numInput * 1000;
+            } else if (hashRateInput === 'gh/s' && hashRateOutput === 'th/s') {
+                document.getElementById('result').value = numInput / 1000;
+
+                //calc from Th/s  
+            } else if (hashRateInput === 'th/s' && hashRateOutput === 'h/s') {
+                document.getElementById('result').value = numInput * 1000000000000;
+            } else if (hashRateInput === 'th/s' && hashRateOutput === 'kh/s') {
+                document.getElementById('result').value = numInput * 1000000000;
+            } else if (hashRateInput === 'th/s' && hashRateOutput === 'mh/s') {
+                document.getElementById('result').value = numInput * 1000000;
+            } else if (hashRateInput === 'th/s' && hashRateOutput === 'gh/s') {
+                document.getElementById('result').value = numInput * 1000;
+            } else {
+                alert("Please slect valid hashrate ");
+            }
         }
- }
-     
-     //-- calculatio of daily coins per hash unit
-     function calcCoins() {
-         
-         var result = parseFloat(document.getElementById('result').value.replace(",",""));
-         var coinsPerDay = parseFloat(document.getElementById('coinsPerDay').value);
-         
-         coinsPerUnitCalc = coinsPerDay/result;
-         
-         var coinsPerUnit = document.getElementById('coinsPerHpUnit').value = coinsPerUnitCalc;
-    }
-     
-    
+
+        //-- calculatio of daily coins per hash unit
+        function calcCoins() {
+
+            var result = parseFloat(document.getElementById('result').value.replace(",", ""));
+            var coinsPerDay = parseFloat(document.getElementById('coinsPerDay').value);
+
+            coinsPerUnitCalc = coinsPerDay / result;
+
+            var coinsPerUnit = document.getElementById('coinsPerHpUnit').value = coinsPerUnitCalc;
+        }
+
+
         //-- making an array
         avgArray = new Array;
         document.getElementById("test").innerHTML = avgArray;
-        
+
         avgArray[avgArray.length] = coinsPerUnitCalc;
         document.getElementById("test").innerHTML = avgArray;
-   
-       //-- adding element to an array    
-       function getArray() {
+
+        //-- adding element to an array    
+        function getArray() {
             avgArray[avgArray.length] = coinsPerUnitCalc;
             document.getElementById("test").innerHTML = avgArray;
-        } 
-        
-        
-      //-- average calclation
-      function getAvg() {
-         
-        let sum = avgArray.reduce((previous,current) => current += previous);
-        let avg = sum / avgArray.length
-        document.getElementById("test3").innerHTML = avg;
-        
-     }
-     
-     
-     
-</script>
-  
+        }
+
+
+        //-- average calclation
+        function getAvg() {
+
+            let sum = avgArray.reduce((previous, current) => current += previous);
+            let avg = sum / avgArray.length
+            document.getElementById("test3").innerHTML = avg;
+
+        }
+
+    </script>
+
 </head>
+
 <body>
 
 <div class="container">
-  <h1>HashPower Converter</h1>
-  <p>Convert hash rate and calculate daily mined coins per hashpower unit</p> 
+    <h1>HashPower Converter</h1>
+    <p>Convert hash rate and calculate daily mined coins per hashpower unit</p>
 </div>
 
 <div class="form-group">
- 
-  <div class="col-sm-2">
-    
-    <label for="hashRateInput">Hash Rate</label>
-    <select class="form-control" id="hashRateInput">
+
+    <div class="col-sm-2">
+
+      <label for="hashRateInput">Input Denomination</label>
+      <select class="form-control" id="hashRateInput">
        <option value="h/s">H/s</option>
        <option value="kh/s">Kh/s</option>
        <option value="mh/s">Mh/s</option>
        <option value="gh/s">Gh/s</option>
        <option value="th/s">Th/s</option>
-    </select>
-    
-    <label for="numInput">Input HashPower:</label>
-    <input type="text" class="form-control" id="numInput">
-       
-    <br/>
-    
-   <!-- <button type="button" class="btn btn-primary btn-sm" onclick="calc();">Convert Hash Rate</button><br/><br>-->
-    
-    <a href="http://web2.0calc.com/" target="blank">Scientific Calculator</a> <br>
-    <a href="https://coinsutra.com/hash-rate-or-hash-power/" target="blank" >Hash power in crypto</a><br>
-    <a href="https://bitcoin.stackexchange.com/questions/9219/what-is-the-difference-between-kh-s-mh-s-and-gh-s" target="blank">Hash rate denominatinos</a>
-    
-    
-    </div>
-   
-    
-
-    <div class="col-sm-2">
-      <label for="hashRateOutput">Hash Rate</label>
-      <select class="form-control" id="hashRateOutput">
-        <option value="h/s">H/s</option>
-        <option value="kh/s">Kh/s</option>
-        <option value="mh/s">Mh/s</option>
-        <option value="gh/s">Gh/s</option>
-        <option value="th/s">Th/s</option>
       </select>
-    
-     <label for="result">Output HashPower:</label>
-     <input type="text" class="form-control" id="result">
-     
-     <br/>
       
-    <button type="button" class="btn btn-primary btn-sm" onclick="calc();">Convert Hash Rate</button><br/><br>
-     
-    <label for="coinsPerDay">Coins/Day:</label>
-    <input type="text" class="form-control" id="coinsPerDay">
-    
-    <label for="coinsPerHpUnit">Coins/Output HashPower:</label>
-    <input type="text" class="form-control" id="coinsPerHpUnit">
-    
-     <br/>
-     
-    <button type="button" class="btn btn-success btn-sm" onclick="calcCoins();">Get coins per unit </button><br/> <br>
-       
-         
-   </div>
-   
-   <div class="col-sm-12">
-       <button type="button" class="btn btn-secundary btn-sm" onclick="getArray();">Save value </button><br/> 
-       <p id="test"></p>
-       <button type="button" class="btn btn-warning btn-sm" onclick="getAvg();">Get average</button><br/>
-       <p id="test3"></p>
-   </div>
-   
-</div>
+      <label for="numInput">Input HashPower:</label>
+      <input type="text" class="form-control" id="numInput">
+      <br/>
 
-  
+       <label for="hashRateOutput">Output Denomination</label>
+        <select class="form-control" id="hashRateOutput">
+         <option value="h/s">H/s</option>
+         <option value="kh/s">Kh/s</option>
+         <option value="mh/s">Mh/s</option>
+         <option value="gh/s">Gh/s</option>
+         <option value="th/s">Th/s</option>
+       </select>
+
+        <label for="result">Output HashPower:</label>
+        <input type="text" class="form-control" id="result">
+        <br/>
+        
+       <button type="button" class="btn btn-primary btn-sm" onclick="calc();">Convert Hash Rate</button>
+
+     </div>
+
+
+     <div class="col-sm-2">
+   
+
+        <label for="coinsPerDay">Coins/Day:</label>
+        <input type="text" class="form-control" id="coinsPerDay">
+
+        <label for="coinsPerHpUnit">Coins/Output HashPower:</label>
+        <input type="text" class="form-control" id="coinsPerHpUnit">
+         <br/>
+
+         <button type="button" class="btn btn-success btn-sm" onclick="calcCoins();">Get coins per unit </button><br/> <br>
+         
+         <button type="button" class="btn btn-secundary btn-sm" onclick="getArray();">Save value </button><br/>
+            <p id="test"></p>
+            
+         <button type="button" class="btn btn-warning btn-sm" onclick="getAvg();">Get average</button><br/>
+            <p id="test3"></p>
+
+       </div>
+
+        <div class="col-sm-12">
+            <hr>
+            <a href="http://web2.0calc.com/" target="blank">Scientific Calculator</a> <br>
+            <a href="https://coinsutra.com/hash-rate-or-hash-power/" target="blank">Hash power in crypto</a><br>
+            <a href="https://bitcoin.stackexchange.com/questions/9219/what-is-the-difference-between-kh-s-mh-s-and-gh-s" target="blank">Hash rate denominatinos</a>
+
+        </div>
+
+    </div>
+
+
 
 </body>
+
 </html>
