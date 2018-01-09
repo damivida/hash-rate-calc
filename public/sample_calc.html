@@ -10,12 +10,15 @@
     
     <script>
     
+        //var result;
     function calc() {
         
         var numInput = parseFloat(document.getElementById('numInput').value);
          
         var hashRateInput = document.getElementById('hashRateInput').value;
         var hashRateOutput = document.getElementById('hashRateOutput').value;
+        
+       
         
         //calc H/s
         if(hashRateInput === 'h/s' && hashRateOutput === 'kh/s') {
@@ -39,7 +42,81 @@
         }else {
             alert("please make valid selection");
         }
- }
+        
+        result = parseFloat(document.getElementById('result').value);
+        
+       /* averageArray = new Array;
+        document.getElementById("test").innerHTML = averageArray;
+        
+        averageArray[averageArray.length] = result;
+        document.getElementById("test").innerHTML = averageArray;
+       */
+        
+        
+        
+}
+        
+        
+        
+        //result = document.getElementById('result').value;
+        
+        
+        //-- making an array
+        avgArray = new Array;
+        document.getElementById("test").innerHTML = avgArray;
+        
+        avgArray[avgArray.length] = result;
+        document.getElementById("test").innerHTML = avgArray;
+   
+       //adding element to aon array    
+       function getArray() {
+            avgArray[avgArray.length] = result;
+            document.getElementById("test").innerHTML = avgArray;
+        } 
+        
+        
+      // calculating an average
+      function getAvg() {
+         
+        let sum = avgArray.reduce((previous,current) => current += previous);
+        let avg = sum / avgArray.length
+        document.getElementById("test3").innerHTML = avg;
+        
+     }
+        
+        
+        
+        
+        //-- calculating an average
+/*        function averageFunction(array) {
+            
+            var total = 0;
+            for(var i = 0; i<array.length; i++) {
+                total = total + Array[i];
+            }
+            
+            var aver = total/array.length;
+            
+            return aver
+      
+        }
+        
+        document.getElementById('test3').innerHTML= averageFunction(avgArray);*/
+        
+        
+      /*var sum = 0;
+        
+      function numbForAvg(item) {
+          sum += item;
+          test3.innerHTML = sum;
+      }    */
+        
+ 
+// document.getElementById('avgNum').innerHTML= result;
+        
+        
+        
+        
     
     </script>
     
@@ -68,6 +145,17 @@
     </select>
     
     <input type="text" id="result"><br/><br/>
+    
+    <button onclick="getArray();">colect value: </button><br/><br/>
+    <button onclick="getAvg();">get average value: </button><br/><br/>
+    
+    <p id="test"></p>
+    <p id="test2"></p>
+    <p id="test3"></p>
+    
+    
+    
+
     
 </div>
 </body>

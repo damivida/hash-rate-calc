@@ -11,18 +11,16 @@
  
  <script>
     
-         function calc() {
-        
-             
+     //-- hashrate converter
+    function calc() {
+            
         var numInput = parseFloat(document.getElementById('numInput').value.replace(",",""));
          
         var hashRateInput = document.getElementById('hashRateInput').value;
         var hashRateOutput = document.getElementById('hashRateOutput').value;
         
            
-             
-   
-        //calc H/s
+        //calc from H/s
         if(hashRateInput === 'h/s' && hashRateOutput === 'kh/s') {
             document.getElementById('result').value = numInput/1000;
         }else if(hashRateInput === 'h/s' && hashRateOutput === 'mh/s') {
@@ -32,7 +30,7 @@
         }else if(hashRateInput === 'h/s' && hashRateOutput === 'th/s') {
             document.getElementById('result').value = numInput/10000000000000;
         
-        //calc Kh/s
+        //calc from Kh/s
         }else if(hashRateInput === 'kh/s' && hashRateOutput === 'h/s') {
             document.getElementById('result').value = numInput*1000;
         }else if(hashRateInput === 'kh/s' && hashRateOutput === 'mh/s') {
@@ -42,7 +40,7 @@
         }else if(hashRateInput === 'kh/s' && hashRateOutput === 'th/s') {
             document.getElementById('result').value = numInput/1000000000;
      
-          //calc Mh/s
+          //calc from Mh/s
         }else if(hashRateInput === 'mh/s' && hashRateOutput === 'h/s') {
             document.getElementById('result').value = numInput*1000000;
         }else if(hashRateInput === 'mh/s' && hashRateOutput === 'kh/s') {
@@ -52,7 +50,7 @@
         }else if(hashRateInput === 'mh/s' && hashRateOutput === 'th/s') {
             document.getElementById('result').value = numInput/1000000; 
            
-          //calc Gh/s  
+          //calc from Gh/s  
         }else if(hashRateInput === 'gh/s' && hashRateOutput === 'h/s') {
             document.getElementById('result').value = numInput*1000000000;
         }else if(hashRateInput === 'gh/s' && hashRateOutput === 'kh/s') {
@@ -62,7 +60,7 @@
         }else if(hashRateInput === 'gh/s' && hashRateOutput === 'th/s') {
             document.getElementById('result').value = numInput/1000;    
             
-              //calc Th/s  
+              //calc from Th/s  
         }else if(hashRateInput === 'th/s' && hashRateOutput === 'h/s') {
             document.getElementById('result').value = numInput*1000000000000;
         }else if(hashRateInput === 'th/s' && hashRateOutput === 'kh/s') {
@@ -76,6 +74,7 @@
         }
  }
      
+     //-- calculatio of daily coins per hash unit
      function calcCoins() {
          
          var result = parseFloat(document.getElementById('result').value.replace(",",""));
@@ -84,10 +83,34 @@
          coinsPerUnitCalc = coinsPerDay/result;
          
          var coinsPerUnit = document.getElementById('coinsPerHpUnit').value = coinsPerUnitCalc;
-         
-     }
+    }
      
     
+        //-- making an array
+        avgArray = new Array;
+        document.getElementById("test").innerHTML = avgArray;
+        
+        avgArray[avgArray.length] = coinsPerUnitCalc;
+        document.getElementById("test").innerHTML = avgArray;
+   
+       //-- adding element to an array    
+       function getArray() {
+            avgArray[avgArray.length] = coinsPerUnitCalc;
+            document.getElementById("test").innerHTML = avgArray;
+        } 
+        
+        
+      //-- average calclation
+      function getAvg() {
+         
+        let sum = avgArray.reduce((previous,current) => current += previous);
+        let avg = sum / avgArray.length
+        document.getElementById("test3").innerHTML = avg;
+        
+     }
+     
+     
+     
 </script>
   
 </head>
@@ -145,8 +168,16 @@
     
      <br/>
      
-    <button type="button" class="btn btn-success btn-sm" onclick="calcCoins();">Get coins per unit </button><br/>   
-        
+    <button type="button" class="btn btn-success btn-sm" onclick="calcCoins();">Get coins per unit </button><br/> <br>
+       
+         
+   </div>
+   
+   <div class="col-sm-12">
+       <button type="button" class="btn btn-secundary btn-sm" onclick="getArray();">Save value </button><br/> 
+       <p id="test"></p>
+       <button type="button" class="btn btn-warning btn-sm" onclick="getAvg();">Get average</button><br/>
+       <p id="test3"></p>
    </div>
    
 </div>

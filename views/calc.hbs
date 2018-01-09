@@ -47,7 +47,8 @@
 
 <body>
 <div>
-    <h2>{{pageTitle}}</h2>
+    {{> header}}
+    {{screamIt welcome}}
     <p>Select HashPower</p>
     <select id="hashRateInput">
         <option value="h/s">H/s</option>
@@ -69,10 +70,8 @@
     
     <input type="text" id="result"><br/><br/>
     
-    <a href="/">Home</a>
+    
 </div>
-<footer>
-    <p>Copyright {{currentYear}}</p>
-</footer>
+{{> footer}}
 </body>
 </html>
